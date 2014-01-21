@@ -14,10 +14,14 @@
    
     <!-- endbuild -->
   </head>
-  <body ng-app>
+  <body ng-app="app">
   
  
-  <h1>This is the starting point for a new module</h1>
+  <favor-search-box></favor-search-box>
+  <div ng-controller="searchTextListener">
+    <h2>This will be updated with the search-box text by listening for searchbox events</h2>
+    <div>{{searchText}}</div>
+  </div>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -42,7 +46,12 @@
       favorModuleManager.buildScriptObj();
       favorModuleManager.addScriptsToPage();
       var angularModules = favorModuleManager.angularDependencies();
-      var app = angular.module('favorIde',angularModules);
+      var app = angular.module('app',angularModules).controller('searchTextListener',function($scope){
+        $scope.searchText='';
+        $scope.$on('favorSearch',function(event,searchTerms){
+          $scope.searchText = searchTerms;
+        });
+      });
       var gui = require('nw.gui');
       var fs = require('fs');
 

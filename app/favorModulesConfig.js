@@ -128,6 +128,16 @@ var config = {
 			"angular":">=1.2.x"
 		},
 		"angularModule":true
-	}
-
+	},
+	"Favor.Search":{
+		"name":"Favor.Search",
+		"version":"0.0.1",
+		"jsPaths":[
+			"scripts/favorSearch.js"
+		]
+		,"dependencies":{
+			"angular":">=1.2.x"
+		},
+		"angularModule":true
+		}	
 }
