@@ -133,7 +133,7 @@ var config = {
 		"name":"Favor.Search",
 		"version":"0.0.1",
 		"jsPaths":[
-			"scripts/favorSearch.js"
+			"../dist/favorSearch.js"
 		]
 		,"dependencies":{
 			"angular":">=1.2.x"
